@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/',[UsuariosControler::class,'index'])->name('usuarios-index');
 Route::get('usuarios/create',[UsuariosControler::class,'create'])->name('usuarios-create');
  
-Route::post('/usuarios',[UsuariosControler::class,'	store'])->name('usuario-store');
+Route::post('/usuarios',[UsuariosControler::class,'store'])->name('usuario-store');
 
  
  
