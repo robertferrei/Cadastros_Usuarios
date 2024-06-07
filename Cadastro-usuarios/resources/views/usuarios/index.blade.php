@@ -24,18 +24,33 @@
             </tr>
         </thead>
         <tbody>
-            {{-- @foreach($todosUsuarios as $usuarios)
-            
-          
-            <tr>
-
-                <th>{{$usuarios->id}}</th>
-
-                
-      
-            </tr>
-            @endforeach --}}
+             {{-- @foreach($todosUsuarios as $usuarios)                      
+                <tr>
+                <th>{{$usuarios->id}}</th>                      
+                </tr>
+            @endforeach  --}}
         </tbody>
     </table>
 </table>
+
+@if(auth()->check())
+    logado com sucesso {{auth()->login->firstName}}
+@else
+
+<h2>login</h2>
+<form action="{{route('usuario-login')}}" method="POST">
+    @csrf
+    <input type="text" name="email" value="robertferreiramaia20@ma">
+    @error('email')
+    <span>{{$message}}</span>
+    @enderror
+        
+   
+    <input type="password" name="senha" value="111">
+    @error('senha')
+    <span>{{$message}}</span>
+    @enderror
+    <button type="submit">Login</button>
+</form>
+@endif
 @endsection

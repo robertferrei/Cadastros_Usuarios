@@ -20,9 +20,13 @@ Route::get('/', function () {
 });
 
 Route::get('/',[UsuariosControler::class,'index'])->name('usuarios-index');
-Route::get('usuarios/create',[UsuariosControler::class,'create'])->name('usuarios-create');
- 
+Route::get('usuarios/create',[UsuariosControler::class,'create'])->name('usuarios-create'); 
 Route::post('/usuarios',[UsuariosControler::class,'store'])->name('usuario-store');
+Route::post('/usuarios/login',[UsuariosControler::class,'storeLoging'])->name('usuario-login');
+
+//Route::get('/usuarios/{id}',[UsuariosControler::class,'show'])->where('id','[0-9]+')->name('usuario-show');
+
+
 
  
  
