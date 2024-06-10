@@ -22,7 +22,7 @@
             <br>
             <div class="form-group">
                 <label for="senha">Senha :</label>
-                <input type="number" class="form-control" name="senha" placeholder="crie sua senha">
+                <input type="password" class="form-control" name="senha" placeholder="crie sua senha">
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-danger">

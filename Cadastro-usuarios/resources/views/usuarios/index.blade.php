@@ -18,17 +18,21 @@
 {{ session()->get('success') }} 
 @endif
 
+@error('error')
+<span>{{$message}}</span>
+@enderror
+
 @if(auth()->check())
     logado com sucesso {{auth()->login()->nome}}
 @else
 <form action="{{route('usuario-login')}}" method="POST">
     @csrf
-    <input type="text" name="email" value="robertferreiramaia20@ma">
+    <input type="text" name="email" value="">
     @error('email')
     <span>{{$message}}</span>
     @enderror
            
-    <input type="password" name="senha" value="111">
+    <input type="password" name="senha" value="">
     @error('senha')
     <span>{{$message}}</span>
     @enderror
